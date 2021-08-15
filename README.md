@@ -36,6 +36,7 @@ In this section I concluded this analysis by answering the two questions I quote
 	*  The number of people retiring is much more than the people that are eligible for the mentorship program which means if not planned correctly there will be a lot of vacant positions. Since the 'silver tsunami' is described for baby boomers aging 65 or older, Pewlett Hackard will need to find qualified employees for the 88,849 employees that are aged between 66 and 69 after placing the employees in the mentorship program. I found the number of vacant positions according to job title by running the query in graph 1. Table two is the result after subtracting the number of retiring employees and employees that qualify for mentorship.
 	
 		![query_vacant_positions](Resources/query_vacant_positions.png)
+		
 		**Graph 1: Query to Find the Number of Vacant Positions**
 		
 		![vacant_positions](Resources/vacant_positions.png)
