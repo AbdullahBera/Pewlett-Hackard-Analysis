@@ -25,7 +25,7 @@ INTO unique_titles
 FROM retirement_titles AS rt
 ORDER BY rt.emp_no ASC, rt.to_date DESC;
 
-SELECT * FROM unique_titles;
+SELECT * FROM unique_titles; 
 
 -- Retiring Titles
 SELECT COUNT(ut.emp_no), ut.title
@@ -50,3 +50,23 @@ LEFT JOIN titles AS tl
 	ON (e.emp_no = tl.emp_no)
 WHERE (de.to_date = ('9999-01-01'))
 	  AND (birth_date BETWEEN '1965-01-01' AND '1965-12-31');
+
+
+-- Mentorship Titile
+SELECT * FROM mentorship_eligibilty;
+
+SELECT COUNT (me.emp_no), me.title
+INTO mentorship_titles
+FROM mentorship_eligibilty AS me
+GROUP BY me.title
+ORDER BY COUNT DESC;
+
+
+-- Vacant Positions
+SELECT (rt.count - me.count) AS COUNT, rt.title
+INTO vacant_positions
+FROM retiring_titles AS rt
+LEFT JOIN mentorship_eligibilty AS me
+	ON (rt.title = me.title)
+GROUP BY rt.count, rt.title
+ORDER BY COUNT DESC;
